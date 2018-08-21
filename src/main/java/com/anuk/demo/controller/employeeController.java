@@ -73,16 +73,15 @@ List<Employee> empList = new ArrayList<>();
 	}
 
 	@RequestMapping("saveUpdate")
-	public String saveUpdate(@ModelAttribute("emp") Employee emp, Model m) {
+	public String saveUpdate(@ModelAttribute("emp") Employee emp) {
 
 		empService.save(emp);
-		m.addAttribute("emp",emp);
 		return "redirect:/empView";
 
 	}
 
 	@RequestMapping("empDelete")
-	public String empDelete(@RequestParam("id") int id, Model m) {
+	public String empDelete(@RequestParam("id") int id) {
 		empService.deleteById(id);
 		return "redirect:/empView";
 	}
