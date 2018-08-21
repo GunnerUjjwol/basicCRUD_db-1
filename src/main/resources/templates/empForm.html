@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Employee Management System</title>
+</head>
+<body>
+	
+	<center>
+	<h1 th:inline="text">Hello [[${#httpServletRequest.remoteUser}]]!</h1>
+        <form th:action="@{/logout}" method="post">
+            <input type="submit" value="Log Out"/>
+        </form>
+	</center>
+	
+	<h1>Add Employee</h1>
+	<form th:action="@{/save}" method="post">
+		<table>
+
+			<!-- <tr>
+				<td>Id :</td>
+				<td><input type="text" name="id" /></td>
+			</tr> -->
+
+			<tr>
+				<td>Name :</td>
+				<td><input type="text" name="fullname" /></td>
+			</tr>
+
+			<tr>
+				<td>Address :</td>
+				<td><input type="text" name="address" /></td>
+			</tr>
+
+
+			<tr>
+				<td><input type="submit" value="Save" /></td>
+			</tr>
+
+		</table>
+		
+	</form>
+	
+	
+        <br>
+	<a href="empView">View Existing Employees</a>
+
+</body>
+</html>
