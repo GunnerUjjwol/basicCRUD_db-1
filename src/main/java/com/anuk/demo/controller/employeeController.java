@@ -45,7 +45,7 @@ public class employeeController {
 	public ModelAndView save(@Valid @ModelAttribute("emp") Employee emp, BindingResult br) {
 		if(br.hasErrors())
 		{
-			return new ModelAndView("empView", "emp", new Employee());
+			return new ModelAndView("empForm", "emp", new Employee());
 		}
 		
 		empService.save(emp);
